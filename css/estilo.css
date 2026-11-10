@@ -1,0 +1,68 @@
+/* El mapa NO se ve si su hueco no tiene altura. Esta es la línea que todos olvidan. */
+:root {
+	/* Cambia estos valores para ajustar el tamaño de cada logo. */
+	--rouen-logo-size: 72px;
+	--inurba-footer-logo-width: 165px;
+}
+
+html, body { margin: 0; height: 100%; }
+#map { height: 100vh; width: 100%; }   /* 100vh = toda la altura de la pantalla */
+
+.map-branding {
+	position: absolute;
+	inset: 0;
+	z-index: 1000;
+	pointer-events: none;
+}
+
+.map-branding img {
+	position: absolute;
+	display: block;
+	height: auto;
+}
+
+.rouen-logo {
+	top: 16px;
+	left: 16px;
+	width: var(--rouen-logo-size);
+	box-shadow: 0 1px 5px rgb(0 0 0 / 30%);
+}
+
+
+.inurba-footer-logo {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
+    /* CAMBIAR EL TAMAÑO DEL LOGO AQUÍ */
+    width: 80px;
+    height: auto;
+    max-width: none;
+
+    padding: 1px 4px;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.062);
+}
+
+/* Ajustar la imagen dentro del contenedor */
+.inurba-footer-logo img,
+.inurba-footer-logo svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+}
+
+
+@media (max-width: 600px) {
+	:root {
+		--rouen-logo-size: 58px;
+		--inurba-footer-logo-width: 135px;
+	}
+
+	.rouen-logo { top: 12px; left: 12px; }
+	.inurba-footer-logo { bottom: 12px; }
+}
+
+
